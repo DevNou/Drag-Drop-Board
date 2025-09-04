@@ -1,0 +1,215 @@
+/* Container & Typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 0;
+  transition: background 0.3s, color 0.3s;
+}
+.container {
+  width: 95%;
+  max-width: 1400px;
+  text-align: center;
+}
+
+/* Headers */
+h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.list h2 {
+  color: #34495e;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  border-bottom: 2px solid #e1e4e8;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+}
+
+/* Controls Layout */
+.top-controls,
+.filter-controls,
+.bottom-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.top-controls label {
+  align-self: center;
+  font-weight: 600;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+.top-controls input,
+.top-controls select,
+.top-controls button,
+.filter-controls select,
+.bottom-controls button {
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.top-controls button,
+.bottom-controls button {
+  background: #3498db;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.top-controls button:hover,
+.bottom-controls button:hover {
+  background: #2980b9;
+}
+
+/* Board & List */
+.board {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.list {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 30%;
+  min-height: 450px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background-color 0.3s;
+}
+.list:hover {
+  transform: translateY(-5px);
+}
+
+/* Cards */
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  cursor: grab;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+.card:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  background-color: #f0f3f7;
+}
+.card.low {
+  border-left: 6px solid #2ecc71;
+  background: linear-gradient(90deg, #dfffe0, #ffffff);
+}
+.card.medium {
+  border-left: 6px solid #f1c40f;
+  background: linear-gradient(90deg, #fff7d1, #ffffff);
+}
+.card.high {
+  border-left: 6px solid #e74c3c;
+  background: linear-gradient(90deg, #ffd7d7, #ffffff);
+}
+.card .actions {
+  display: flex;
+  gap: 5px;
+}
+.card button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #fff;
+}
+.card .editBtn {
+  background: #f39c12;
+}
+.card .deleteBtn {
+  background: #e74c3c;
+}
+
+/* Hover / Drag */
+.list.over {
+  background: #e3e6ea;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background: #1e1e1e;
+  color: #f5f5f5;
+}
+.dark-mode h1,
+.dark-mode .list h2 {
+  color: #f5f5f5;
+}
+.dark-mode .list {
+  background: #2c2c2c;
+  color: #f5f5f5;
+}
+.dark-mode .card.low {
+  background: linear-gradient(90deg, #1e441e, #2c2c2c);
+}
+.dark-mode .card.medium {
+  background: linear-gradient(90deg, #5a4a1e, #2c2c2c);
+}
+.dark-mode .card.high {
+  background: linear-gradient(90deg, #5a1e1e, #2c2c2c);
+}
+/* Buttons in dark mode: orange */
+.dark-mode .top-controls button,
+.dark-mode .bottom-controls button {
+  background: #f39c12;
+}
+.dark-mode .top-controls button:hover,
+.dark-mode .bottom-controls button:hover {
+  background: #e67e22;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .list {
+    width: 45%;
+  }
+}
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+    align-items: center;
+  }
+  .list {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.footer-credit {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 30px;
+  font-style: italic;
+  transition: color 0.3s;
+}
+.footer-credit span {
+  color: #e67e22; /* πορτοκαλί για έμφαση */
+  font-weight: 600;
+}
+.dark-mode .footer-credit { color: #bdc3c7; }
+.dark-mode .footer-credit span { color: #f39c12; }

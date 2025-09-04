@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kanban Board</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Simple Kanban Board</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="container">
+  <h1>Kanban Board</h1>
 
-      <div class="board">
-        <!-- LIST 1 -->
-        <div class="list" id="list1">
-          <h2>To Do</h2>
-          <div class="card" draggable="true" id="card1">Wash Dishes</div>
-          <div class="card" draggable="true" id="card2">Buy Groceries</div>
-        </div>
+  <!-- Top Controls: Add Task + Priority Label -->
+  <div class="top-controls">
+    <input type="text" id="newCardInput" placeholder="Add a new task...">
+    <label for="prioritySelect">Priority:</label>
+    <select id="prioritySelect">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <button id="addCardBtn">Add Task</button>
+  </div>
 
-        <!-- LIST 2 -->
-        <div class="list" id="list2">
-          <h2>In Progress</h2>
-          <div class="card" draggable="true" id="card3">Learn to code</div>
-        </div>
+  <!-- Filters -->
+  <div class="filter-controls">
+    <select id="filterList">
+      <option value="all">All Lists</option>
+      <option value="list1">To Do</option>
+      <option value="list2">In Progress</option>
+      <option value="list3">Done</option>
+    </select>
 
-        <!-- LIST 3 -->
-        <div class="list" id="list3">
-          <h2>Done</h2>
-        </div>
-      </div>
+    <select id="filterPriority">
+      <option value="all">All Priorities</option>
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+  </div>
+
+  <!-- Export / Dark Mode -->
+  <div class="bottom-controls">
+    <button id="darkModeToggle">Toggle Dark Mode</button>
+    <button id="exportJSON">Export JSON</button>
+  </div>
+
+  <div class="board">
+    <div class="list" id="list1" data-list-name="To Do">
+      <h2>To Do</h2>
     </div>
+    <div class="list" id="list2" data-list-name="In Progress">
+      <h2>In Progress</h2>
+    </div>
+    <div class="list" id="list3" data-list-name="Done">
+      <h2>Done</h2>
+    </div>
+  </div>
+  <p class="footer-credit">Developed by <span>DevAr</span></p>
+</div>
 
-    <script src="script.js"></script>
-  </body>
+
+<script src="script.js"></script>
+</body>
 </html>
