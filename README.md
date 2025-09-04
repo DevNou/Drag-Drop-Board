@@ -23,3 +23,5 @@ A full-featured, professional Kanban board with drag & drop, priority labels, da
 6. **Export:** Click `Export JSON` to download tasks as a JSON file.
 
 
+<img width="1524" height="798" alt="image" src="https://github.com/user-attachments/assets/de9c03e4-0440-4a5a-b1d8-c4754e88eb35" />
+<img width="1579" height="794" alt="image" src="https://github.com/user-attachments/assets/324dd5a5-d31c-490f-83d0-3849753dded6" />
